@@ -1,4 +1,4 @@
-//course information - 1st step (1a)
+//course information - 1st step (1.1a)
 /*
 const App = () => {
   const course = 'Desenvolvimento de aplicação Half Stack';
@@ -27,7 +27,8 @@ const App = () => {
 }
 */
 
-//course information - 1st step (1b)
+//course information - 1st step (1.1b)
+/*
 const Header = (headerProp) => {
   return (
     <>
@@ -70,5 +71,62 @@ const App = () => {
     </>
   )
 }
+*/
+
+//course information - 2nd step (1.2)
+const Header = (headerProp) => {
+  return (
+    <>
+      <h1>{headerProp.course}</h1>
+    </>
+  )
+}
+
+const Part = (partProp) => {
+  return (
+    <p>{partProp.part} {partProp.exercise}</p>
+  )
+}
+
+const Content = () => {
+  const part1 = 'Fundamentos da biblioteca React'
+  const exercises1 = 10;
+  const part2 = 'Usando props para passar dados'
+  const exercises2 = 7
+  const part3 = 'Estado de um componente'
+  const exercises3 = 14
+
+  return (
+    <>
+      <Part part={part1} exercise={exercises1} />
+      <Part part={part2} exercise={exercises2} />
+      <Part part={part3} exercise={exercises3} />
+    </>
+  )
+}
+
+const Total = (totalProp) => {
+  return (
+    <>
+      <p>Number of exercises {totalProp.total}</p>
+    </>
+  )
+}
+
+const App = () => {
+  const course = 'Desenvolvimento de aplicação Half Stack'
+  const exercises1 = 10;
+  const exercises2 = 7
+  const exercises3 = 14
+  return (
+    <>
+      <Header course={course} />
+      <Content />
+      <Total total={exercises1+exercises2+exercises3} />
+    </>
+  )
+}
+
+
 
 export default App;
